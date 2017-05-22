@@ -1,0 +1,1 @@
+export const textSlice = text => text < 50 ? text : `${text.slice(0, 50)}...`;

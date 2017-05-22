@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>electron-youtube-app</title>
+    <style> ::selection { background: white; } </style>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <% if (htmlWebpackPlugin.options.appModules) { %>
+      <script>
+        require('module').globalPaths.push('<%= htmlWebpackPlugin.options.appModules.replace(/\\/g, '\\\\') %>')
+      </script>
+    <% } %>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
