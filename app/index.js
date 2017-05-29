@@ -2,7 +2,8 @@
 
 var platform = require('os').platform()
 const path = require('path')
-import { app, nativeImage, Tray, Menu, BrowserWindow } from 'electron'
+// const ipc = require('ipc')
+import { app, nativeImage, Tray, Menu, BrowserWindow, ipcMain } from 'electron'
 
 let mainWindow
 const winURL = process.env.NODE_ENV === 'development'
@@ -10,6 +11,8 @@ const winURL = process.env.NODE_ENV === 'development'
   : `file://${__dirname}/index.html`
 
 let tray = null;
+
+console.log('ipcMain', ipcMain)
 
 function createWindow () {
   mainWindow = new BrowserWindow({
@@ -45,7 +48,12 @@ function createWindow () {
 
   const contextMenu = [
     {
-      label: 'Close App', click: () => app.quit()
+      label: 'Close App',
+      click: () => app.quit()
+    },
+    {
+      label: 'Play/Stop',
+      click: () => mainWindow.webContents.send('play-stop')
     }
   ]
 
