@@ -23,7 +23,9 @@ class Root extends Component {
   }
 
   getVideo (i) {
-    this.props.router.push(`/video/${this.props.videos[i].id.videoId}`)
+    if (this.props.videos[i].id.videoId) {
+      this.props.router.push(`/video/${this.props.videos[i].id.videoId}`);
+    }
   }
 
   render () {
@@ -31,7 +33,7 @@ class Root extends Component {
 
     return (
       <div className="videos-list">
-        {videos ? videos.map((video, key) => VideoPreview(key, video.snippet, this.getVideo.bind(this))) : null}
+        {videos.length ? videos.map((video, key) => VideoPreview(key, video.snippet, this.getVideo.bind(this))) : null}
       </div>
     )
   }

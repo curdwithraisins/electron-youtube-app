@@ -17,7 +17,7 @@ export default (state = initialState, action) => {
     case actionTypes.CLEAR_VIDEO:
       return { ...initialState, ...action }
     case actionTypes.MORE_VIDEOS:
-      return { ...state, videos: [ ...state.videos, ...action.videos ]}
+      return { ...state, videos: [ ...state.videos, ...action.videos ] }
     case actionTypes.GET_VIDEO:
       return { ...state, ...action }
     default:
