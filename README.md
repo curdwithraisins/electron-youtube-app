@@ -1,6 +1,6 @@
 # electron-youtube-app
 
-![preview](https://lh4.googleusercontent.com/pExzlFZ4kCJMnZwvzC9MJFYX64y4aO19GG9wDvHOqg85sWgS2oti0vHnii9mJq_XbhjniJ2orK5eEtk=w1586-h454-rw)
+![preview](http://i.piccy.info/i9/e9831e3ab4e6673633e6b00227b5290e/1502956217/33462/1171834/Screen_Shot_2017_08_14_at_1_47_57_PM_500.jpg)
 
 The app allowes you to search and watch youtube videos on top of your another open apps. 
 You can resize and place it whenever you want!
