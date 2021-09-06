@@ -13,7 +13,7 @@ class Video extends Component {
 
     return (
       <div className="video-page">
-          {currentVideo && currentVideo.id ? <VideoPage currentVideo={ currentVideo } /> : null}
+        {currentVideo && currentVideo.id ? <VideoPage currentVideo={ currentVideo } /> : null}
       </div>
     )
   }
