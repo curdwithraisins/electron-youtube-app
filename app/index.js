@@ -42,7 +42,7 @@ function createWindow () {
     tryImg = `${__dirname}/icons/icon.png`;
   }
 
-  const icon = nativeImage.createFromPath(tryImg).resize({width: 24, height: 24})
+  const icon = nativeImage.createFromPath(tryImg);//.resize({width: 24, height: 24})
 
   tray = new Tray(icon)
 

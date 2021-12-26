@@ -14,6 +14,8 @@ export default (state = initialState, action) => {
       return { ...state, ...action }
     case actionTypes.SEARCH_VIDEO:
       return { ...state, ...action }
+    case actionTypes.SET_VIDEO:
+      return { ...state, ...action }
     case actionTypes.CLEAR_VIDEO:
       return { ...initialState, ...action }
     case actionTypes.MORE_VIDEOS:

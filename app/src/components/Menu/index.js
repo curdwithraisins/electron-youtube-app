@@ -4,7 +4,14 @@ import { getNewVideos } from '../../actions/videos'
 
 class Menu extends Component {
   constructor (props) {
-    super(props)
+    super(props);
+    console.log(props);
+  }
+
+  goHome (e) {
+    if (this.context.router.location.pathname !== '/') {
+      this.context.router.push('/');
+    }
   }
 
   searchVideos (e) {
@@ -17,7 +24,7 @@ class Menu extends Component {
   render () {
     return (
       <div className="menu">
-        <div className="icon"></div>
+        <div className="icon" onClick={this.goHome.bind(this)}></div>
         <div className="search">
           <input
             onKeyUp={this.searchVideos.bind(this)}
@@ -34,7 +41,8 @@ Menu.contextTypes = {
 }
 
 const mapStateTopProps = (state) => ({
-  videos: state.getVideos.videos
+  videos: state.getVideos.videos,
+  query: state.getVideos.query
 })
 
 export default connect(mapStateTopProps, { getNewVideos })(Menu)

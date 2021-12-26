@@ -29,6 +29,12 @@ export function getMoreVideos ({ query = '', pageToken = '' }) {
   }
 }
 
+export function setVideos ({ query = '', videos = '' }) {
+  return dispatch => {
+    dispatch({type: actionTypes.SET_VIDEOS, query, videos})
+  }
+}
+
 export function getVideo (id) {
   return dispatch => {
     Video(id)
