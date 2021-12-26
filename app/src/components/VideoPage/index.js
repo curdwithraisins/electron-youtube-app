@@ -6,6 +6,7 @@ class VideoPage extends Component {
     super(props)
     this.state = {
       src: `${props.currentVideo.id}?`,
+      snippet: props.currentVideo.snippet,
       func: 'pauseVideo'
     }
   }
@@ -25,7 +26,14 @@ class VideoPage extends Component {
 
   render () {
     return (
-      <iframe src={`https://www.youtube.com/embed/${this.state.src}`}/>
+      <div>
+        <iframe src={`https://www.youtube.com/embed/${this.state.src}`}/>
+        <div className="video-page-data">
+          <div className="video-title">{this.state.snippet.title}</div>
+          <div className="video-channelTitle">Channel: {this.state.snippet.channelTitle}</div>
+          <div className="video-description">Description: {this.state.snippet.description}</div>
+        </div>
+      </div>
     )
   }
 }
